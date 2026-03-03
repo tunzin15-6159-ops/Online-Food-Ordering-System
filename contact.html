@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us - FoodNest</title>
+    <link rel="stylesheet" href="food.css">
+</head>
+<body>
+
+<header>
+    <h1>Contact Us</h1>
+</header>
+
+<section class="contact-container">
+
+    <div class="contact-info">
+        <h2>📞 Get In Touch</h2>
+        <p>Email: support@foodnest.com</p>
+        <p>Phone: +880 1234-567890</p>
+        <p>Address: Dhaka, Bangladesh</p>
+    </div>
+
+    <div class="contact-form">
+        <h2>📩 Send Us a Message</h2>
+
+        <form onsubmit="return submitForm()">
+            <input type="text" id="name" placeholder="Your Name" required><br>
+            <input type="email" id="email" placeholder="Your Email" required><br>
+            <textarea id="message" placeholder="Write your message..." required></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <p id="successMsg" class="hidden">✅ Message Sent Successfully!</p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 FoodNest | All Rights Reserved</p>
+</footer>
+
+<script src="food.js"></script>
+
+</body>
+</html>
