@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Menu</title>
+</head>
+<body>
+
+<h2>Food Menu</h2>
+
+<div id="menu"></div>
+
+<br>
+
+<h3>Total Price: $<span id="total">0</span></h3>
+
+<script>
+
+// ================= MENU DATA (ALL RESTAURANTS) =================
+let menuData = {
+
+    "KFC": [
+        {name: "Burger", price: 50},
+        {name: "Fried Chicken", price: 60},
+        {name: "Fries", price: 30},
+        {name: "Zinger Burger", price: 70},
+        {name: "Pepsi", price: 20}
+    ],
+
+    "Pizza Hut": [
+        {name: "Pizza", price: 10},
+        {name: "Pasta", price: 80},
+        {name: "Garlic Bread", price: 40},
+        {name: "Chicken Wings", price: 60},
+        {name: "Coke", price: 20}
+    ],
+
+    "Burger King": [
+        {name: "Whopper", price: 70},
+        {name: "Chicken Burger", price: 60},
+        {name: "Fries", price: 30},
+        {name: "Onion Rings", price: 40},
+        {name: "Sprite", price: 20}
+    ],
+
+    "Takeout": [
+        {name: "Whopper", price: 70},
+        {name: "Chicken Burger", price: 60},
+        {name: "Fries", price: 30},
+        {name: "Onion Rings", price: 40},
+        {name: "Sprite", price: 20}
+    ],
+
+    "Madchef": [
+        {name: "Pizza", price: 10},
+        {name: "Pasta", price: 80},
+        {name: "Garlic Bread", price: 40},
+        {name: "Chicken Wings", price: 60},
+        {name: "Coke", price: 20}
+    ],
+
+    "Chillox": [
+        {name: "Burger", price: 50},
+        {name: "Fried Chicken", price: 60},
+        {name: "Fries", price: 30},
+        {name: "Zinger Burger", price: 70},
+        {name: "Pepsi", price: 20}
+    ],
+
+    "BFC": [
+        {name: "Whopper", price: 70},
+        {name: "Chicken Burger", price: 60},
+        {name: "Fries", price: 30},
+        {name: "Onion Rings", price: 40},
+        {name: "Sprite", price: 20}
+    ],
+
+    "Herfy": [
+        {name: "Pizza", price: 10},
+        {name: "Pasta", price: 80},
+        {name: "Garlic Bread", price: 40},
+        {name: "Chicken Wings", price: 60},
+        {name: "Coke", price: 20}
+    ],
+
+    "American Burger": [
+        {name: "Burger", price: 50},
+        {name: "Fried Chicken", price: 60},
+        {name: "Fries", price: 30},
+        {name: "Zinger Burger", price: 70},
+        {name: "Pepsi", price: 20}
+    ],
+
+    "Popeyes": [
+        {name: "Burger", price: 50},
+        {name: "Fried Chicken", price: 60},
+        {name: "Fries", price: 30},
+        {name: "Zinger Burger", price: 70},
+        {name: "Pepsi", price: 20}
+    ],
+
+    "Haji Biriyani": [
+        {name: "Kacchi", price: 80},
+        {name: "Chicken Biryani", price: 60},
+        {name: "Borhani", price: 20},
+        {name: "Salad", price: 10},
+        {name: "Firni", price: 30}
+    ],
+
+    "Nanna Biriyani": [
+        {name: "Kacchi", price: 80},
+        {name: "Beef Biryani", price: 60},
+        {name: "Borhani", price: 20},
+        {name: "Salad", price: 10},
+        {name: "Jorda", price: 30}
+    ],
+
+    "Kacchi Bhai": [
+        {name: "Kacchi", price: 80},
+        {name: "Chicken polaw", price: 60},
+        {name: "Borhani", price: 20},
+        {name: "Salad", price: 10},
+        {name: "Firni", price: 30}
+    ],
+
+    "Sultan’s Dine": [
+        {name: "Kacchi", price: 80},
+        {name: "Beef Biryani", price: 60},
+        {name: "Borhani", price: 20},
+        {name: "Salad", price: 10},
+        {name: "Jorda", price: 30}
+    ],
+    
+    "Puran Dhaka Restaurant": [
+        {name: "Kacchi", price: 80},
+        {name: "Chicken Biryani", price: 60},
+        {name: "Borhani", price: 20},
+        {name: "Salad", price: 10},
+        {name: "Firni", price: 30}
+    ],
+
+    "Fakruddin Biriyani": [
+        {name: "Kacchi", price: 80},
+        {name: "Beef polaw", price: 60},
+        {name: "Borhani", price: 20},
+        {name: "Salad", price: 10},
+        {name: "Jorda", price: 30}
+    ],
+    
+    "Al Razzaque Restaurant": [
+        {name: "Kacchi", price: 80},
+        {name: "Chicken Biryani", price: 60},
+        {name: "Borhani", price: 20},
+        {name: "Salad", price: 10},
+        {name: "Firni", price: 30}
+    ],
+
+    "Star Kabab & Restaurant": [
+        {name: "Beef Bhuna", price: 70},
+        {name: "Chicken Roast", price: 60},
+        {name: "Paratha", price: 20},
+        {name: "Dal", price: 20},
+        {name: "Tea", price: 10}
+    ],
+
+    "Cafe Nawab": [
+        {name: "Kacchi", price: 80},
+        {name: "Beef Biryani", price: 60},
+        {name: "Borhani", price: 20},
+        {name: "Salad", price: 10},
+        {name: "Jorda", price: 30}
+    ],
+
+    "Bismillah Kabab": [
+        {name: "Kacchi", price: 80},
+        {name: "Beef Biryani", price: 60},
+        {name: "Borhani", price: 20},
+        {name: "Salad", price: 10},
+        {name: "Jorda", price: 30}
+    ],
+
+    "Baskin Robbins": [
+        {name: "Ice Cream", price: 5},
+        {name: "Sundae", price: 6},
+        {name: "Chocolate Cone", price: 4},
+        {name: "Milkshake", price: 5},
+        {name: "Brownie", price: 3}
+    ],
+
+    "Well Food": [
+    {name: "Chocolate Cake", price: 4},
+    {name: "Vanilla Cake", price: 4},
+    {name: "Pastry", price: 3},
+    {name: "Brownie", price: 3},
+    {name: "Cupcake", price: 2}
+    ],
+
+    "Takeout Dessert": [
+    {name: "Ice Cream", price: 5},
+    {name: "Milkshake", price: 4},
+    {name: "Waffle", price: 5},
+    {name: "Donut", price: 3},
+    {name: "Cheesecake", price: 6}
+    ],
+    
+    "Cold Stone Creamery": [
+    {name: "Signature Ice Cream", price: 6},
+    {name: "Chocolate Sundae", price: 7},
+    {name: "Milkshake", price: 5},
+    {name: "Ice Cream Cake", price: 8},
+    {name: "Waffle Cone", price: 4}
+    ],
+
+    "Premium Sweets": [
+        {name: "Roshogolla", price: 3},
+        {name: "Misti Doi", price: 4},
+        {name: "Sandesh", price: 3},
+        {name: "Cham Cham", price: 3},
+        {name: "Laddu", price: 2}
+    ],
+
+    "Gelatissimo": [
+    {name: "Gelato", price: 6},
+    {name: "Sorbet", price: 5},
+    {name: "Chocolate Gelato", price: 6},
+    {name: "Fruit Gelato", price: 5},
+    {name: "Waffle Gelato", price: 7}
+    ],
+
+    "Tabaq Coffee": [
+    {name: "Cold Coffee", price: 4},
+    {name: "Latte", price: 5},
+    {name: "Cappuccino", price: 5},
+    {name: "Espresso", price: 3},
+    {name: "Mocha", price: 6}
+    ],
+
+
+    "Cheez Dessert Bar": [
+    {name: "Cheesecake", price: 6},
+    {name: "Chocolate Lava Cake", price: 5},
+    {name: "Brownie", price: 4},
+    {name: "Ice Cream", price: 5},
+    {name: "Milkshake", price: 5}
+    ],
+
+    "Bella Italia Dessert": [
+    {name: "Tiramisu", price: 7},
+    {name: "Panna Cotta", price: 6},
+    {name: "Gelato", price: 5},
+    {name: "Chocolate Cake", price: 5},
+    {name: "Italian Pastry", price: 4}
+    ],
+
+    
+    "Red Chili Restaurant": [
+        {name: "Fried Rice", price: 60},
+        {name: "Noodles", price: 50},
+        {name: "Soup", price: 40},
+        {name: "Spring Roll", price: 40},
+        {name: "Manchurian", price: 70}
+    ],
+
+
+    "Mainland China": [
+        {name: "Kung Pao Chicken", price: 80},
+        {name: "Sweet & Sour Pork", price: 50},
+        {name: "Fried Rice with Veg", price: 40},
+        {name: "Hot & Sour Soup", price: 20},
+        {name: "Spring Rolls", price: 30}
+    ],
+
+    "Kungfu Restaurant": [
+        {name: "Chili Chicken", price: 60},
+        {name: "Schezwan Noodles", price: 50},
+        {name: "Soup", price: 40},
+        {name: "Paneer Manchurian", price: 40},
+        {name: "Manchurian", price: 70}
+    ],
+
+    "Golden Dragon": [
+        {name: "Dragon Beef", price: 90},
+        {name: "Prawn Tempura", price: 50},
+        {name: "Egg Drop Soup", price: 39},
+        {name: "Spring Roll", price: 20},
+        {name: "Vegetable Chow Mein", price: 70}
+    ],
+
+    "China Garden": [
+        {name: "Fried Rice", price: 30},
+        {name: "Lemon Chicken", price: 50},
+        {name: "Veg Hakka Noodles", price: 40},
+        {name: "Spring Roll", price: 50},
+        {name: "Manchurian", price: 80}
+    ],
+
+    "Sizzling Wok": [
+        {name: "Fried Rice", price: 60},
+        {name: "Noodles", price: 50},
+        {name: "Soup", price: 40},
+        {name: "Spring Roll", price: 40},
+        {name: "Manchurian", price: 700}
+    ],
+
+    "Shanghai Express": [
+        {name: "Veg Dumplings", price: 60},
+        {name: "Noodles", price: 30},
+        {name: "Spring Roll", price: 40},
+        {name: "Beef Fried Rice", price: 70}
+    ],
+
+    "Dragon House": [
+        {name: "Dragon Chicken", price: 90},
+        {name: "Kung Pao Veg", price: 20},
+        {name: "Soup", price: 30},
+        {name: "Spring Roll", price: 30},
+        {name: "Schezwan Beef", price: 90}
+    ],
+
+    "Beijing Restaurant": [
+        {name: "Fried Rice", price: 20},
+        {name: "Beijing Duck", price: 80},
+        {name: "Hot & Sour Soup", price: 40},
+        {name: "Spring Roll", price: 20},
+        {name: "Honey Chili Paneer", price:90}
+    ],
+
+    "Panda Garden": [
+        {name: "Fried Rice", price: 60},
+        {name: "Noodles", price: 50},
+        {name: "Soup", price: 40},
+        {name: "Spring Roll", price: 40},
+        {name: "Manchurian", price: 70}
+    ],
+
+    "Handi Restaurant": [
+        {name: "Biryani", price: 8},
+        {name: "Kebab", price: 6},
+        {name: "Naan", price: 2},
+        {name: "Chicken Curry", price: 7},
+        {name: "Lassi", price: 3}
+    ],
+
+    "Tabaq Coffee": [
+        {name: "Cold Coffee", price: 4},
+        {name: "Latte", price: 5},
+        {name: "Cappuccino", price: 5},
+        {name: "Espresso", price: 3},
+        {name: "Mocha", price: 6}
+    ]
+
+};
+
+// ================= LOAD MENU =================
+let restaurant = localStorage.getItem("restaurant");
+let menuDiv = document.getElementById("menu");
+
+if(menuData[restaurant]){
+
+    menuData[restaurant].forEach((item, index) => {
+
+        let div = document.createElement("div");
+
+        div.innerHTML = `
+            <b>${item.name}</b> ($${item.price}) <br>
+            Quantity: 
+            <input type="number" min="0" value="0" id="qty${index}" 
+            onchange="calculateTotal()">
+            <hr>
+        `;
+
+        menuDiv.appendChild(div);
+    });
+
+} else {
+    menuDiv.innerHTML = "<h3>No menu available</h3>";
+}
+
+// ================= TOTAL =================
+function calculateTotal(){
+
+    let total = 0;
+
+    let items = menuData[restaurant];
+
+    items.forEach((item, index) => {
+        let qty = document.getElementById("qty" + index).value;
+        total += qty * item.price;
+    });
+
+    document.getElementById("total").innerText = total;
+}
+
+</script>
+
+</body>
+</html>
