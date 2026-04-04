@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Restaurant</title>
+</head>
+<body>
+
+<h2>Select Restaurant</h2>
+
+<select id="restaurant" onchange="goToItems(this.value)">
+    <option value="">--Select Restaurant--</option>
+</select>
+
+<br><br>
+
+<button onclick="goBack()">⬅ Back to Category</button>
+
+<script src="food.js"></script>
+
+<script>
+
+let data = {
+
+    fastfood: ["KFC", "Pizza Hut"],
+    chinese: ["Red Chili", "Golden Dragon"],
+    indian: ["Handi", "Nawab"]
+
+};
+
+let category = localStorage.getItem("category");
+let select = document.getElementById("restaurant");
+
+if(category && data[category]){
+    data[category].forEach(rest => {
+        let option = document.createElement("option");
+        option.text = rest;
+        option.value = rest;
+        select.add(option);
+    });
+}
+
+// ================= GO TO ITEMS =================
+function goToItems(restaurant){
+    if(restaurant !== ""){
+        localStorage.setItem("restaurant", restaurant);
+        window.location.href = "items.html";
+    }
+}
+
+// ================= BACK BUTTON =================
+function goBack(){
+    window.location.href = "category.html";
+}
+</script>
+
+</body>
+</html>
