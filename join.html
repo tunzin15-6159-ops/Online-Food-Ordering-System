@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="food.css">
+</head>
+<body class="join">
+
+    <!-- <input type="radio" name="f1" id="f1" onclick="login()" checked>
+    <label for="f1">Log in</label>
+
+    <input type="radio" name="f1" id="f2" onclick="registration()">
+    <label for="f2">Registration</label> -->
+
+    <form action="" autocomplete="on" id="form1">
+        <fieldset>
+            <!-- <legend>Log in</legend> -->
+            
+            
+            <label>Username:</label>
+            <input type="text" id="username" onkeyup="validateUsername()">
+            <span id="userError"></span>
+ 
+            <br><br>
+
+            <label for="pass">Password</label>
+            <input type="password" name="pass" id="pass">
+            <span id="eCA"></span>
+            <span id="eSA"></span>
+            <span id="eD"></span>
+            <span id="eSC"></span>
+
+            <br><br>
+
+            <input type="submit" value="Log in" onclick="validation()">
+            
+        </fieldset>
+    </form>
+
+    <form action="" id="form2">
+        <fieldset>
+            <!-- <legend>Registration</legend> -->
+
+            <label for="fname">First name</label>
+            <input type="text" name="fname" id="fname">
+            <span id="efname"></span>
+
+            <br><br>
+
+            <label for="lname">Last name</label>
+            <input type="text" name="lname" id="lname">
+            <span id="elname"></span>
+
+            <br><br>
+
+            <label>Email:</label>
+            <input type="text" id="email" onkeyup="validateEmail()">
+            <span id="emailError"></span>
+            <br><br>
+
+            <label for="con">Contact</label>
+            <input type="number" name="con" id="con">
+            <br><br>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob">
+            <br><br>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <span id="genderError"></span>
+            <br><br>
+
+
+            <label for="fc"> food choice</label>
+            <input type="text" name="fc" id="fc">
+            <br><br>
+
+            <label for="fc">favourate cuisine</label>
+            <select name="fc" id="fc">
+                <option value="bangladeshi">Bangladeshi Cuisine</option>
+                <option value="healthy">Healthy Food</option>
+                <option value="fastfood">Fast Food</option>
+                <option value="chinese">Chinese</option>
+                <option value="indian">Indian</option>
+                <option value="dessert">Dessert</option>
+                <option value="drinks">Drinks</option>
+
+            </select>
+            <br><br>
+
+
+            <label for="ad">Address</label>
+            <input type="text" name="ad" id="ad">
+            <br><br>
+
+            <label for="pass">password</label>
+            <input type="text" name="pass" id="pass" placeholder="Please enter a password">
+            <br><br>
+
+            
+            <label for="rpass">password re-type</label>
+            <input type="text" name="rpass" id="rpass" placeholder="Please re-type the password">
+            <br><br>
+
+
+            <label for="da">note</label>
+            <textarea name="da" id="da" cols="30" rows="10"></textarea>
+            <br><br>
+
+            <label for="pp">Profile Picture</label>
+            <input type="file" name="pp" id="pp">
+
+            <br><br>
+            <button id="registerBtn">Register</button>
+        </fieldset>
+    </form>
+
+    <p id="convention">don't have an account?<a href="#" onclick="registration()">Register</a></p>
+    <script src="food.js"></script>
+</body>
+</html>
