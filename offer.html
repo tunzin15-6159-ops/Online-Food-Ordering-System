@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Offers</title>
+    <link rel="stylesheet" href="food.css">
+</head>
+<body class="offer">
+
+<h2>🔥 Special Offers</h2>
+
+<div id="offerList"></div>
+
+
+<h3>Total Offer Price: $<span id="total">0</span></h3>
+
+<button onclick="goToPayment()"> Pay </button>
+  
+
+<script>
+
+// ================= OFFER ITEMS =================
+let offers = [
+    {name: "Burger Combo (Burger + Fries + Drink)", price: 8},
+    {name: "Pizza Combo (Pizza + Coke)", price: 12},
+    {name: "Dessert Combo (Cake + Ice Cream)", price: 6},
+    {name: "Chinese Combo (Fried Rice + Chicken)", price: 10},
+    {name: "Coffee Combo (Coffee + Brownie)", price: 5}
+];
+
+// ================= LOAD OFFERS =================
+let div = document.getElementById("offerList");
+
+offers.forEach((item, index) => {
+
+    let d = document.createElement("div");
+
+    d.innerHTML = `
+        <b>${item.name}</b> ($${item.price}) <br>
+        Quantity:
+        <input type="number" min="0" value="0" id="qty${index}"
+        onchange="calculateTotal()">
+        <hr>
+    `;
+
+    div.appendChild(d);
+});
+
+// ================= TOTAL =================
+function calculateTotal(){
+
+    let total = 0;
+
+    offers.forEach((item, index) => {
+        let qty = document.getElementById("qty" + index).value;
+        total += qty * item.price;
+    });
+
+    document.getElementById("total").innerText = total;
+}
+
+function goToPayment(){
+    window.location.href = "payment.html";
+}
+
+
+
+
+</script>
+
+</body>
+</html>

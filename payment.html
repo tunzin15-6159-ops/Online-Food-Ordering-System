@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+    <link rel="stylesheet" href="food.css">
+
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body class="payment">
+
+<h2>Payment Page</h2>
+
+<h3>Total Amount: $<span id="finalTotal">0</span></h3>
+
+<select id="paymentMethod">
+    <option>Online</option>
+    <option>Offline (Cash)</option>
+</select>
+
+<br><br>
+
+<button onclick="showForm()">Confirm Order</button>
+
+<!-- ================= FORM ================= -->
+<div id="orderForm" class="hidden">
+
+    <h2>Order Details</h2>
+
+    <form onsubmit="return placeOrder()">
+
+        <label>Name:</label><br>
+        <input type="text" id="name" required><br><br>
+
+        <label>Phone:</label><br>
+        <input type="text" id="phone" required><br><br>
+
+        <label>Address:</label><br>
+        <textarea id="address" required></textarea><br><br>
+
+        <h3>Selected Items:</h3>
+        <ul id="orderItems"></ul>
+
+        <h3>Total Payable: $<span id="totalAmount">0</span></h3>
+
+        <br>
+
+        <button type="submit">Place Order ✅</button>
+
+    </form>
+
+</div>
+
+<script>
+
+// ================= LOAD TOTAL =================
+let total = localStorage.getItem("totalPrice");
+document.getElementById("finalTotal").innerText = total;
+
+// ================= SHOW FORM =================
+function showForm(){
+
+    document.getElementById("orderForm").classList.remove("hidden");
+
+    // show total
+    document.getElementById("totalAmount").innerText = total;
+
+    // show selected items
+    let items = JSON.parse(localStorage.getItem("selectedItems"));
+    let list = document.getElementById("orderItems");
+
+    list.innerHTML = "";
+
+    if(items){
+        items.forEach(item => {
+            let li = document.createElement("li");
+            li.innerText = item.name + " x " + item.qty;
+            list.appendChild(li);
+        });
+    }
+}
+
+// ================= PLACE ORDER =================
+function placeOrder(){
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let address = document.getElementById("address").value;
+    let method = document.getElementById("paymentMethod").value;
+
+    if(name === "" || phone === "" || address === ""){
+        alert("Please fill all fields!");
+        return false;
+    }
+
+    alert("Order Placed Successfully 🎉\nPayment: " + method);
+
+    localStorage.clear();
+
+    window.location.href = "index.html";
+
+    return false;
+}
+
+
+</script>
+
+</body>
+</html>
