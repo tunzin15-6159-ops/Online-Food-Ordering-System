@@ -1,0 +1,321 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #f2f2f2;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    background: green;
+    color: white;
+    border: none;
+}
+
+select, input, textarea {
+    padding: 8px;
+    margin: 8px;
+}
+
+*{
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#form2{
+    display: none;
+}
+
+fieldset{
+    border: none;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px 3px white;
+    margin: 20px;
+    width: 30%;
+    padding: 20px;
+}
+
+input, select{
+    border: 1px solid rgb(243, 198, 198);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+p{
+    margin-left: 20px;
+}
+
+*{
+    margin: 0;
+}
+
+.nav{
+    height: 50px;
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.logo h1{
+    color: white;
+}
+
+input, .input button{
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.links{
+    width: 16%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a{
+    color: white;
+    text-decoration: none;
+}
+
+.hero{
+    height: 500px;
+    background-image: url("foodnest.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.button button{
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.button button:hover{
+    background-color: green;
+    color: white;
+}
+
+.com{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.com p{
+    text-align: justify;
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+}
+
+.card{
+    display: flex;
+    justify-content: space-between;
+}
+
+.one{
+    margin: 10px;
+    height: 300px;
+    width: 26%;
+    background-color: rgb(81, 133, 2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.one img{
+    border-radius: 50%;
+}
+
+.one h3, .one p{
+    color: white;
+}
+
+.one p{
+    text-align: justify;
+}
+
+.footer{
+    height: 30px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p{
+    color: white;
+}
+
+header {
+    background: green;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.explore {
+    padding: 30px;
+    text-align: center;
+}
+
+.card {
+    background: #f4f4f4;
+    margin: 20px auto;
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    color: darkgreen;
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.about {
+    width: 70%;
+    margin: auto;
+    padding: 30px;
+}
+
+.about h2 {
+    color: darkgreen;
+}
+
+.about ul {
+    text-align: left;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+    width: 40%;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkgreen;
+}
+
+.hidden {
+    display: none;
+}
+
+.payment {
+    background: linear-gradient(to right, #41ff64, #2bffa3);
+    padding: 40px;
+    align-items: center;
+}
+
+.rest {
+    background: linear-gradient(to right, #41ff64, white);
+    padding: 40px;
+    align-items: center;
+}
+
+.feedback {
+    background: linear-gradient(to right, orange, white);
+    padding: 40px;
+    align-items: center;
+}
+
+.category {
+    background: linear-gradient(to right, #8dff41, #f4ff2b);
+    padding: 40px;
+    align-items: center;
+}
+
+.item {
+    background: linear-gradient(to right, #8dff41, #f4ff2b);
+    padding: 40px;
+    align-items: center;
+}
+
+.join {
+    background: linear-gradient(to right, #fffb2b,white);
+    padding: 40px;
+    align-items: center;
+    
+}
+
+.contact {
+    background: linear-gradient(to right, white, rgb(58, 128, 0));
+    padding: 40px;
+    align-items: center;
+}
+
+.explore {
+    background: linear-gradient(to right, #8dff41, #f4ff2b);
+    padding: 40px;
+    align-items: center;
+}
+
+.offer {
+    background: linear-gradient(to right, white, rgba(255, 0, 0, 0.484));
+    padding: 40px;
+    align-items: center;
+}
