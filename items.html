@@ -2,16 +2,21 @@
 <html>
 <head>
     <title>Food Menu</title>
+    <link rel="stylesheet" href="food.css">
 </head>
-<body>
+<body class="item">
 
 <h2>Food Menu</h2>
 
 <div id="menu"></div>
 
+
+
 <br>
 
 <h3>Total Price: $<span id="total">0</span></h3>
+
+<button onclick="goToPayment()">Pay</button>
 
 <script>
 
@@ -186,6 +191,47 @@ let menuData = {
         {name: "Brownie", price: 3}
     ],
 
+    "Royal Indian Cuisine": [
+    {name: "Butter Chicken", price: 120},
+    {name: "Garlic Naan", price: 25},
+    {name: "Paneer Tikka", price: 90},
+    {name: "Dal Makhani", price: 70},
+    {name: "Gulab Jamun", price: 30}
+    ],
+
+    "Handi Restaurant": [
+    {name: "Masala Dosa", price: 50},
+    {name: "Idli Sambar", price: 40},
+    {name: "Medur Vada", price: 30},
+    {name: "Coconut Chutney", price: 10},
+    {name: "Filter Coffee", price: 20}
+    ],
+     
+    "Nawab Restaurant": [
+    {name: "Hyderabadi Dum Biryani", price: 110},
+    {name: "Mirchi Ka Salan", price: 20},
+    {name: "Raita", price: 10},
+    {name: "Chicken 65", price: 85},
+    {name: "Double Ka Meetha", price: 40}
+    ],
+
+    "Indian Spice House": [
+    {name: "Amritsari Kulcha", price: 45},
+    {name: "Chole Masala", price: 60},
+    {name: "Lassi", price: 35},
+    {name: "Mixed Veg Pakora", price: 40},
+    {name: "Gajar Ka Halwa", price: 50}
+    ],
+
+    "Spice & Rice": [
+    {name: "Kolkata Mutton Biryani", price: 130},
+    {name: "Fish Fry", price: 70},
+    {name: "Aloo Posto", price: 50},
+    {name: "Luchi", price: 15},
+    {name: "Rasgulla", price: 25}
+    ],
+
+
     "Well Food": [
     {name: "Chocolate Cake", price: 4},
     {name: "Vanilla Cake", price: 4},
@@ -346,6 +392,81 @@ let menuData = {
         {name: "Cappuccino", price: 5},
         {name: "Espresso", price: 3},
         {name: "Mocha", price: 6}
+    ],
+
+    "North End Coffee": [
+    {name: "Cold Coffee", price: 4},
+    {name: "Cappuccino", price: 5},
+    {name: "Latte", price: 5},
+    {name: "Espresso", price: 3},
+    {name: "Mocha", price: 6},
+    {name: "Milkshake (Chocolate/Vanilla)", price: 5},
+    {name: "Fresh Orange Juice", price: 3}
+    ],
+
+    "Gloria Jean's Coffee":[
+    {name: "Mango Juice", price: 3},
+    {name: "Lemon Juice", price: 2},
+    {name: "Soft Drink (Coke/Pepsi)", price: 2},
+    {name: "Smoothie", price: 4},
+    {name: "Green Tea", price: 2},
+    {name: "Black Coffee", price: 3},
+    {name: "Iced Tea", price: 3}
+    ],
+
+    "Coffee World": [
+    {name: "Borhani", price: 3},
+    {name: "Lassi (Sweet/Salted)", price: 3},
+    {name: "Fresh Sugarcane Juice", price: 2},
+    {name: "Lemon Mint Drink", price: 2},
+    {name: "Falooda", price: 4},
+    {name: "Mango Lassi", price: 4},
+    {name: "Cold Coffee", price: 4}
+    ],
+
+    "Coffee House":[
+    {name: "Milkshake", price: 5},
+    {name: "Green Tea", price: 2},
+    {name: "Black Tea", price: 1},
+    {name: "Soft Drink", price: 2},
+    {name: "Fruit Juice", price: 3},
+    {name: "Smoothie", price: 4},
+    {name: "Coconut Water", price: 3}
+    ],
+
+    "Green Plate": [
+    {name: "Grilled Chicken Salad", price: 6},
+    {name: "Boiled Egg & Veggies", price: 4},
+    {name: "Green Salad", price: 3},
+    {name: "Oats with Fruits", price: 3}
+    ],
+
+    "Fit Food Corner":[
+    {name: "Brown Rice with Grilled Fish", price: 7},
+    {name: "Mixed Vegetable Soup", price: 4},
+    {name: "Fruit Bowl", price: 3},
+    {name: "Low Fat Yogurt", price: 2}
+    ],
+
+    "Nutri Bowl":[
+    {name: "Chicken Vegetable Stir Fry", price: 6},
+    {name: "Whole Wheat Sandwich", price: 5},
+    {name: "Egg & Salad Plate", price: 3},
+    {name: "Smoothie (No Sugar)", price: 4}
+    ],
+
+    "Fresh & Fit": [
+    {name: "Grilled Fish with Vegetables", price: 6},
+    {name: "Boiled Rice + Dal + Veg", price: 5},
+    {name: "Chicken Soup", price: 4},
+    {name: "Fruit Salad", price: 3}
+    ],
+
+    "Healthy Choice":[
+    {name: "Doi (Low Fat Yogurt)", price: 2},
+    {name: "Vegetable Khichuri", price: 5},
+    {name: "Grilled Chicken Breast", price: 6},
+    {name: "Fresh Juice (No Sugar)", price: 3}
     ]
 
 };
@@ -388,7 +509,14 @@ function calculateTotal(){
     });
 
     document.getElementById("total").innerText = total;
+
+   
 }
+
+function goToPayment(){
+    window.location.href = "payment.html";
+}
+
 
 </script>
 
